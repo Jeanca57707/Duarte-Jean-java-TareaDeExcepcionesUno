@@ -20,7 +20,7 @@ public class Main{
         do{
 
             System.out.println("\n===============================");
-            System.out.println("      REGISTRO DE USUARIOS       ");
+            System.out.println("||    REGISTRO DE USUARIOS    ||");
             System.out.println("===============================\n");
 
             System.out.println("1. Registrar Usuario.");
