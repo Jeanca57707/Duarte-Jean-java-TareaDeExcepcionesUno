@@ -69,7 +69,7 @@ public class Usuario{
 
     //Método para registrar Usuario
     public void registrar(){
-
+        
         Scanner sc = new Scanner(System.in);
 
         System.out.print("Nombre: ");
