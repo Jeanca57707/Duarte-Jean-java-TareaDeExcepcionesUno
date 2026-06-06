@@ -1,3 +1,5 @@
+import java.util.*;
+
 public class Usuario{
 
     //Atributos del Usuario
@@ -62,5 +64,35 @@ public class Usuario{
 
         return salario;
     }
+
+
+
+    //Método para registrar Usuario
+    public void registrar(){
+
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Nombre: ");
+        String nombre = sc.nextLine();
+
+        System.out.print("Edad: ");
+        int edad = sc.nextInt();
+
+        sc.nextLine();
+
+        System.out.print("Correo Electronico: ");
+        String email = sc.nextLine();
+
+        System.out.print("Salario: ");
+        double salario = sc.nextDouble();
+
+        setNombre(nombre);
+        setEdad(edad);
+        setEmail(email);
+        setSalario(salario);
+    
+    }
+
+
     
 }
