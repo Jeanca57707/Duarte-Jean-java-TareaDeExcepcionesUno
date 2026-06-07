@@ -39,8 +39,7 @@ public class Main{
                     Usuario nuevo = new Usuario();
                     nuevo.registrar();
                     registro.add(nuevo);
-                    System.out.println("Usuario Registrado.");
-
+                
                     break;
                 
                 case 2:

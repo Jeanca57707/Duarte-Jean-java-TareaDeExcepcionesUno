@@ -70,29 +70,42 @@ public class Usuario{
     //Método para registrar Usuario
     public void registrar(){
         
-        try{
+        Scanner sc = new Scanner(System.in);
 
-            Scanner sc = new Scanner(System.in);
+        int edad = 0;
+        
+        try{
 
             System.out.print("Nombre: ");
             String nombre = sc.nextLine();
-            setNombre(nombre);
 
-            System.out.print("Edad: ");
-            int edad = sc.nextInt();
-            setEdad(edad);
+            try{
+
+              System.out.print("Edad: ");
+              edad = sc.nextInt();
+
+            }catch(InputMismatchException e){
+
+                System.out.println("\nDebe ingresar un numero valido.");
+                return;
+            }
 
             sc.nextLine();
 
             System.out.print("Correo Electronico: ");
             String email = sc.nextLine();
-            setEmail(email);
 
             System.out.print("Salario: ");
             double salario = sc.nextDouble();
-            setSalario(salario);
 
             ValidarUsuario.validarUsuario(nombre, edad, email, salario);
+
+            setNombre(nombre);
+            setEdad(edad);
+            setEmail(email);
+            setSalario(salario);
+
+
         }
         catch(NombreInvalidoExcepcion e){
 

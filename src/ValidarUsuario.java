@@ -4,13 +4,9 @@ public class ValidarUsuario{
     public static void validarUsuario(String nombre, int edad, String email, double salario)throws NombreInvalidoExcepcion, EdadInvalidaExcepcion, EmailInvalidoExcepcion, SalarioInvalidoExcepcion{
 
         //Nombre 
-        if(nombre == null){
+        if(nombre == null || nombre.length() < 3){
 
-            throw new NombreInvalidoExcepcion("¡El nombre no puede quedar vacio!");
-        }
-        if(nombre.length() < 3){
-
-            throw new NombreInvalidoExcepcion("¡El nombre debe ser de 3 letras en adelante!");
+            throw new NombreInvalidoExcepcion("¡El nombre debe contener al menos 3 caracteres.");
         }
 
         //Edad
@@ -30,7 +26,7 @@ public class ValidarUsuario{
         }
 
         //Email
-        if(!email.contains("@") || !email.contains(".")){
+        if(email == null || !email.contains("@") || !email.contains(".")){
 
             throw new EmailInvalidoExcepcion("¡El Correo NO es válido!");
         }
