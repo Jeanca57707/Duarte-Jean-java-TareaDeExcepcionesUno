@@ -20,7 +20,7 @@ public class ValidarUsuario{
         }
 
         //Salario
-        if(salario < 0){
+        if(salario <= 0){
 
             throw new SalarioInvalidoExcepcion("¡El salario debe ser mayor que 0!");
         }

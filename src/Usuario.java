@@ -68,7 +68,7 @@ public class Usuario{
 
 
     //Método para registrar Usuario
-    public void registrar(){
+    public boolean registrar(){
         
         Scanner sc = new Scanner(System.in);
 
@@ -88,7 +88,7 @@ public class Usuario{
             }catch(InputMismatchException e){
 
                 System.out.println("\nDebe ingresar un numero valido.");
-                return;
+                return false;
             }
 
             sc.nextLine();
@@ -105,7 +105,7 @@ public class Usuario{
             }catch(InputMismatchException e){
 
                 System.out.println("\nDebe ingresar un numero valido");
-                return;
+                return false;
             }
 
             ValidarUsuario.validarUsuario(nombre, edad, email, salario);
@@ -115,27 +115,29 @@ public class Usuario{
             setEmail(email);
             setSalario(salario);
 
+            return true;
 
         }
         catch(NombreInvalidoExcepcion e){
 
-            System.out.println("\nError. " + e.getMessage());
+            System.out.println("\nError: " + e.getMessage());
+            return false;
         }
         catch(EdadInvalidaExcepcion e){
 
-            System.out.println("\nError. " + e.getMessage());
+            System.out.println("\nError: " + e.getMessage());
+            return false;
         }
         catch(EmailInvalidoExcepcion e){
 
-            System.out.println("\nError. " + e.getMessage());
+            System.out.println("\nError: " + e.getMessage());
+            return false;
         }
         catch(SalarioInvalidoExcepcion e){
 
-            System.out.println("\nError. " + e.getMessage());
+            System.out.println("\nError: " + e.getMessage());
+            return false;
         }
-        finally{
-
-            System.out.println("Proceso finalizado.");
-        }  
+    
     }
 }

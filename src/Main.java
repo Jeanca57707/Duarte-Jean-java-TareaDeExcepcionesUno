@@ -32,13 +32,18 @@ public class Main{
               opc = sc.nextInt();
               sc.nextLine();
 
+              System.out.println();
+
               switch(opc){
 
                 case 1:
 
                     Usuario nuevo = new Usuario();
-                    nuevo.registrar();
-                    registro.add(nuevo);
+                    if(nuevo.registrar()){
+
+                        registro.add(nuevo);
+                        System.out.println("\nUsuario registrado correctamente.");
+                    }
                 
                     break;
                 
@@ -58,7 +63,11 @@ public class Main{
                 System.out.println("\nError. Debe ingresar un NUMERO valido.");
                 sc.nextLine();
                 
-            }        
+            }
+            finally{
+
+                System.out.println("Proceso finalizado.");
+            }       
             
         }while(opc != 2);
         sc.close();
