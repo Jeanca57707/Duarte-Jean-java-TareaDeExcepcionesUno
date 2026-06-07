@@ -15,30 +15,31 @@ public class Main{
 
         Scanner sc = new Scanner(System.in);
 
-        int opc;
+        int opc = 0;
 
         do{
 
-            System.out.println("\n===============================");
-            System.out.println("||    REGISTRO DE USUARIOS    ||");
-            System.out.println("===============================\n");
+            try{
 
-            System.out.println("1. Registrar Usuario.");
-            System.out.println("2. Salir.");
+              System.out.println("\n===============================");
+              System.out.println("||   REGISTRO DE USUARIOS    ||");
+              System.out.println("===============================\n");
 
-            System.out.print("\n Elija una opcion: ");
-            opc = sc.nextInt();
-            sc.nextLine();
+              System.out.println("1. Registrar Usuario.");
+              System.out.println("2. Salir.");
 
+              System.out.print("\nElija una opcion: ");
+              opc = sc.nextInt();
+              sc.nextLine();
 
-            switch(opc){
+              switch(opc){
 
                 case 1:
 
                     Usuario nuevo = new Usuario();
                     nuevo.registrar();
                     registro.add(nuevo);
-                    System.out.println("\nUsuario Registrado.");
+                    System.out.println("Usuario Registrado.");
 
                     break;
                 
@@ -51,8 +52,16 @@ public class Main{
 
                     System.out.println("\nOpcion Invalida.");
                     break;
-            }
+                }
 
+            }//Captura una excepción cuando el usuario ingresa una cadena de texto o un caracter al momento de elegir una opción
+            catch(InputMismatchException e){
+                System.out.println("\nError. Debe ingresar un NUMERO valido.");
+                sc.nextLine();
+                
+            }        
+            
         }while(opc != 2);
+        sc.close();
     }
 }

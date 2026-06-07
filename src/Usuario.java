@@ -93,8 +93,6 @@ public class Usuario{
             setSalario(salario);
 
             ValidarUsuario.validarUsuario(nombre, edad, email, salario);
-
-            System.out.println("\nUsuario Registrado.");
         }
         catch(NombreInvalidoExcepcion e){
 
@@ -114,9 +112,7 @@ public class Usuario{
         }
         finally{
 
-            System.out.println("\nProceso finalizado.");
-        }
-       
+            System.out.println("Proceso finalizado.");
+        }  
     }
-
 }
