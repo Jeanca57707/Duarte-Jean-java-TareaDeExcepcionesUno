@@ -73,6 +73,7 @@ public class Usuario{
         Scanner sc = new Scanner(System.in);
 
         int edad = 0;
+        double salario = 0;
         
         try{
 
@@ -95,8 +96,17 @@ public class Usuario{
             System.out.print("Correo Electronico: ");
             String email = sc.nextLine();
 
+
+            try{
+
             System.out.print("Salario: ");
-            double salario = sc.nextDouble();
+            salario = sc.nextDouble();
+
+            }catch(InputMismatchException e){
+
+                System.out.println("\nDebe ingresar un numero valido");
+                return;
+            }
 
             ValidarUsuario.validarUsuario(nombre, edad, email, salario);
 
